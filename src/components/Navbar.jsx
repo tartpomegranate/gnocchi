@@ -15,7 +15,7 @@ const Navbar = ({ isDarkMode, toggleDarkMode }) => {
         />
         <Link
           to="/"
-          className="bg-sky-500 text-white py-2 px-4 rounded-md hover:bg-sky-600 transition duration-200"
+          className="bg-sky-500 text-white py-2 px-4 rounded-md font-semibold hover:bg-sky-600 transition duration-200"
         >
           Sign in
         </Link>
