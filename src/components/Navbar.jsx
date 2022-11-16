@@ -11,11 +11,11 @@ const Navbar = ({ isDarkMode, toggleDarkMode }) => {
           size={32}
           weight={isDarkMode ? 'fill' : 'regular'}
           onClick={toggleDarkMode}
-          className="p-1 cursor-pointer rounded-full dark:hover:bg-gray-600 hover:bg-gray-300  transition duration-300"
+          className="p-1 cursor-pointer rounded-full dark:hover:bg-gray-600 hover:bg-gray-300  transition duration-200"
         />
         <Link
           to="/"
-          className="bg-sky-500 text-white py-2 px-4 rounded-md hover:bg-sky-600 transition duration-300"
+          className="bg-sky-500 text-white py-2 px-4 rounded-md hover:bg-sky-600 transition duration-200"
         >
           Sign in
         </Link>
