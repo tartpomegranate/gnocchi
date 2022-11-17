@@ -3,6 +3,7 @@ import { useDarkMode } from 'usehooks-ts';
 
 import Navbar from '../components/Navbar';
 import TabSwitcher from '../components/TabSwitcher';
+import Todos from '../components/todos/Todos';
 
 const Root = () => {
   // Dark Mode
@@ -20,9 +21,11 @@ const Root = () => {
   const [activeTab, setActiveTab] = useState('todos');
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 dark:text-white">
+    <div className="min-h-screen bg-white dark:bg-gray-900 dark:text-white">
       <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggle} />
       <TabSwitcher activeTab={activeTab} setActiveTab={setActiveTab} />
+
+      {activeTab === 'todos' && <Todos />}
     </div>
   );
 };
