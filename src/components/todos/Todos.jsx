@@ -9,7 +9,7 @@ const Todos = () => {
   return (
     <div className="mx-6 p-2">
       <TodoInput setTodos={setTodos} />
-      {/* <TodoList todos={todos} /> */}
+      <TodoList todos={todos} />
     </div>
   );
 };
