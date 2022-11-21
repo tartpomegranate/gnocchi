@@ -4,7 +4,12 @@ const TodoInput = ({ setTodos }) => {
   const [newTodo, setNewTodo] = useState('');
 
   const handleNewTodo = () => {
-    setTodos((todos) => [...todos, newTodo]);
+    const todoObject = {
+      done: false,
+      text: newTodo
+    };
+
+    setTodos((todos) => [...todos, todoObject]);
     setNewTodo('');
   };
 
