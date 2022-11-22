@@ -4,14 +4,10 @@ import { arraySplit } from '../../utils/array-split';
 
 const TodoList = ({ todos, setTodos }) => {
   const handleTodoStatusChange = (e) => {
-    console.log('Function Called!');
-
-    const todoId = e.target.parentElement.getAttribute('data-id');
+    const todoId = e.currentTarget.parentElement.getAttribute('data-id');
     if (!uuidValidate(todoId)) {
       return;
     }
-
-    console.log(todoId, 'id verified!');
 
     setTodos(
       todos.map((todo) => {
@@ -22,8 +18,6 @@ const TodoList = ({ todos, setTodos }) => {
         return todo;
       })
     );
-
-    console.log('function finished running!');
   };
 
   let [uncompletedTodos, completedTodos] = arraySplit(
