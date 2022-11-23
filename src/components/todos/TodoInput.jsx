@@ -25,7 +25,7 @@ const TodoInput = ({ setTodos }) => {
       ></textarea>
 
       <button
-        className="self-center py-2 px-4 rounded-md font-semibold text-white bg-sky-500 hover:bg-sky-600 dark:border-gray-800 dark:hover:border-gray-700 transition duration-200"
+        className="py-2 px-4 rounded-md font-semibold text-white bg-sky-500 hover:bg-sky-600 dark:border-gray-800 dark:hover:border-gray-700 transition duration-200"
         onClick={handleNewTodo}
       >
         Add Todo
