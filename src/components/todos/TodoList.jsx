@@ -22,7 +22,7 @@ const TodoList = ({ todos, setTodos }) => {
 
   let [uncompletedTodos, completedTodos] = arraySplit(
     todos,
-    (todo) => todo.done
+    (todo) => !todo.done
   );
 
   const uncompletedTodosElements = uncompletedTodos.map((todo) => (
