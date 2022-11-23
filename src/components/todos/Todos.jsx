@@ -7,7 +7,7 @@ const Todos = () => {
   const [todos, setTodos] = useLocalStorage('todos', []);
 
   return (
-    <div className="mx-6 p-2">
+    <div className="mx-8 md:flex md:gap-4">
       <TodoInput setTodos={setTodos} />
       <TodoList todos={todos} setTodos={setTodos} />
     </div>

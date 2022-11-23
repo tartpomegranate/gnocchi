@@ -29,7 +29,7 @@ const TodoList = ({ todos, setTodos }) => {
     <div
       key={todo.id}
       data-id={todo.id}
-      className="flex justify-between items-center dark:bg-gray-800 p-3 rounded-full border-2 dark:border-gray-700"
+      className="mb-2 last:mb-0 flex justify-between items-center dark:bg-gray-800 p-3 rounded-full border-2 dark:border-gray-700"
     >
       <p>{todo.text}</p>
       <Check
@@ -44,7 +44,7 @@ const TodoList = ({ todos, setTodos }) => {
     <div
       key={todo.id}
       data-id={todo.id}
-      className="flex justify-between items-center dark:bg-gray-800/50 p-3 rounded-full border-2 dark:border-gray-700"
+      className="mb-2 last:mb-0 flex justify-between items-center dark:bg-gray-800/50 p-3 rounded-full border-2 dark:border-gray-700"
     >
       <p className="line-through opacity-50">{todo.text}</p>
       <ArrowUUpLeft
@@ -56,13 +56,15 @@ const TodoList = ({ todos, setTodos }) => {
   ));
 
   return (
-    <div className="my-4 flex flex-col gap-4">
+    <div className="pb-4 md:w-2/3">
       {uncompletedTodos.length !== 0 && (
-        <div className="flex flex-col gap-2">{uncompletedTodosElements}</div>
+        <div className="flex flex-col gap-2 pb-4 md:block md:columns-2">
+          {uncompletedTodosElements}
+        </div>
       )}
 
       {completedTodos.length !== 0 && (
-        <div className="flex flex-col gap-2 pt-4 border-t-2 dark:border-gray-800">
+        <div className="flex flex-col gap-2 pt-4 border-t-2 dark:border-gray-800 md:block md:columns-2">
           {completedTodosElements}
         </div>
       )}
