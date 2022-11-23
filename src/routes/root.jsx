@@ -4,6 +4,7 @@ import { useDarkMode } from 'usehooks-ts';
 import Navbar from '../components/Navbar';
 import TabSwitcher from '../components/TabSwitcher';
 import Todos from '../components/todos/Todos';
+import Notes from '../components/notes/Notes';
 
 const Root = () => {
   // Dark Mode
@@ -26,6 +27,7 @@ const Root = () => {
       <TabSwitcher activeTab={activeTab} setActiveTab={setActiveTab} />
 
       {activeTab === 'todos' && <Todos />}
+      {activeTab === 'notes' && <Notes />}
     </div>
   );
 };
