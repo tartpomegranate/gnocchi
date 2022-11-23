@@ -16,7 +16,7 @@ const TodoInput = ({ setTodos }) => {
   };
 
   return (
-    <div className="pb-4 flex flex-col gap-4 rounded-md md:w-1/3">
+    <div className="pb-8 flex flex-col gap-4 rounded-md md:w-1/3">
       <textarea
         placeholder="Enter a Todo..."
         className="block w-full resize-none p-2 h-12 rounded-md shadow-md hover:shadow-lg outline-none bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-600 transition duration-200 focus:border-gray-400 dark:focus:border-gray-600 focus:shadow-lg"
