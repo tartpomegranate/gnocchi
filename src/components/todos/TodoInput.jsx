@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import { v5 as uuidv5 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
 const TodoInput = ({ setTodos }) => {
   const [newTodo, setNewTodo] = useState('');
 
   const handleNewTodo = () => {
     const todoObject = {
-      id: uuidv5(newTodo, uuidv5.URL),
+      id: uuidv4(),
       text: newTodo,
       done: false
     };

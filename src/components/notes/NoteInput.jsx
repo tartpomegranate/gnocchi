@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import { v5 as uuidv5 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
 const NoteInput = ({ setNotes }) => {
   const [newNote, setNewNote] = useState('');
 
   const handleNewNote = () => {
     const noteObject = {
-      id: uuidv5(newNote, uuidv5.URL),
+      id: uuidv4(),
       text: newNote
     };
 
