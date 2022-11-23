@@ -24,10 +24,13 @@ const Root = () => {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 dark:text-white">
       <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggle} />
-      <TabSwitcher activeTab={activeTab} setActiveTab={setActiveTab} />
 
-      {activeTab === 'todos' && <Todos />}
-      {activeTab === 'notes' && <Notes />}
+      <div className="lg:px-32">
+        <TabSwitcher activeTab={activeTab} setActiveTab={setActiveTab} />
+
+        {activeTab === 'todos' && <Todos />}
+        {activeTab === 'notes' && <Notes />}
+      </div>
     </div>
   );
 };
