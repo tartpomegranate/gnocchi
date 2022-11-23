@@ -7,7 +7,7 @@ const Notes = () => {
   const [notes, setNotes] = useLocalStorage('notes', []);
 
   return (
-    <div className="mx-6 p-2">
+    <div className="mx-8 md:flex md:gap-4">
       <NotesInput setNotes={setNotes} />
       <NotesList notes={notes} setNotes={setNotes} />
     </div>

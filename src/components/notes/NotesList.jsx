@@ -5,7 +5,7 @@ const NotesList = ({ notes, setNotes }) => {
     <div
       key={note.id}
       data-id={note.id}
-      className="dark:bg-gray-800 p-3 rounded-md border-2 dark:border-gray-700"
+      className="mb-2 last:mb-0 p-3 dark:bg-gray-800 rounded-md border-2 dark:border-gray-700"
     >
       <TextTruncate
         line={3}
@@ -18,10 +18,8 @@ const NotesList = ({ notes, setNotes }) => {
   ));
 
   return (
-    <div className="my-4 flex flex-col gap-4">
-      {notes.length !== 0 && (
-        <div className="flex flex-col gap-2">{notesElements}</div>
-      )}
+    <div className="pb-4 md:w-2/3 md:columns-2 xl:columns-3 md:gap-2">
+      {notes.length !== 0 && notesElements}
     </div>
   );
 };
