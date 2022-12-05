@@ -14,7 +14,7 @@ const Navbar = ({ isDarkMode, toggleDarkMode }) => {
           className="p-1 cursor-pointer rounded-full dark:hover:bg-gray-600 hover:bg-gray-300  transition duration-200"
         />
         <Link
-          to="/"
+          to="/signin"
           className="bg-sky-500 text-white py-2 px-4 rounded-md font-semibold hover:bg-sky-600 transition duration-200"
         >
           Sign in
