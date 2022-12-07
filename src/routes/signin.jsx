@@ -1,3 +1,4 @@
+import { ArrowLeft } from 'phosphor-react';
 import { Link } from 'react-router-dom';
 import googleLogo from '../assets/google-logo.svg';
 
@@ -7,19 +8,36 @@ const SignIn = () => {
       <div className="w-full sm:w-2/3 lg:w-1/3">
         <Link
           to="/"
-          className="block mb-16 text-5xl font-bold text-center dark:text-white"
+          className="flex items-center w-fit m-auto gap-1 text-xs p-2 mb-2 rounded-lg cursor-pointer dark:hover:bg-gray-600 hover:bg-gray-300  transition duration-200 dark:text-white"
         >
-          <h1>Gnocchi</h1>
+          <ArrowLeft size={20} className=" rounded-full " />
+          <p>Go back to note taking</p>
         </Link>
 
+        <h1
+          to="/"
+          className="block mb-16 text-5xl font-bold text-center dark:text-white"
+        >
+          Gnocchi
+        </h1>
+
         <form className="px-4 flex flex-col">
+          <label htmlFor="email" className="dark:text-white pl-1 pb-2">
+            Email:
+          </label>
           <input
             type="email"
+            id="email"
             placeholder="Email"
             className="px-2 py-3 mb-4 rounded border-2 text-white border-gray-200 hover:border-gray-300 transition duration-200 dark:bg-gray-800 dark:border-gray-700 focus:outline-gray-400 dark:focus:outline-none"
           />
+
+          <label htmlFor="password" className="dark:text-white pl-1 pb-2">
+            Password:
+          </label>
           <input
             type="password"
+            id="password"
             placeholder="Password"
             className="px-2 py-3 rounded border-2 text-white border-gray-200 hover:border-gray-300 transition duration-200 dark:bg-gray-800 dark:border-gray-700 focus:outline-gray-400 dark:focus:outline-none"
           />
@@ -39,6 +57,16 @@ const SignIn = () => {
             Continue with Google
           </button>
         </form>
+
+        <p className="py-4 dark:text-white text-center">
+          Don't have an account?{' '}
+          <Link
+            to="/signup"
+            className="text-sky-500 hover:text-sky-600 hover:underline transition duration-200"
+          >
+            Sign up
+          </Link>
+        </p>
       </div>
     </div>
   );
