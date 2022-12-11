@@ -18,7 +18,7 @@ import {
 } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: import.meta.env.FIREBASE_API_KEY,
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: 'gnocchi-596a2.firebaseapp.com',
   projectId: 'gnocchi-596a2',
   storageBucket: 'gnocchi-596a2.appspot.com',
