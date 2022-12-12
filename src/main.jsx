@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 
-import Root from './routes/root';
-import ErrorPage from './routes/errorPage';
-import SignIn from './routes/signin';
-import SignUp from './routes/signup';
+import Root from './routes/Root';
+import ErrorPage from './routes/ErrorPage';
+import SignIn from './routes/SignIn';
+import SignUp from './routes/SignUp';
+import PasswordReset from './routes/PasswordReset';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,11 @@ const router = createBrowserRouter([
   {
     path: '/signup',
     element: <SignUp />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: '/password-reset',
+    element: <PasswordReset />,
     errorElement: <ErrorPage />
   }
 ]);
