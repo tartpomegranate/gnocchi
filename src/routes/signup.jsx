@@ -1,10 +1,27 @@
-import { ArrowLeft } from 'phosphor-react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+
+import { ArrowLeft } from 'phosphor-react';
 import googleLogo from '../assets/google-logo.svg';
 
 const SignUp = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
+
+  const signUpButtonRef = useRef();
+  const googleSignUpButtonRef = useRef();
+
+  useEffect(() => {
+    if (name && email && password) {
+      signUpButtonRef.current.disabled = false;
+    } else {
+      signUpButtonRef.current.disabled = true;
+    }
+  }, [name, email, password]);
+
   return (
-    <div className="h-screen flex justify-center items-center dark:bg-gray-900">
+    <div className="h-screen flex justify-center items-center dark:bg-gray-900 dark:text-white">
       <div className="w-full sm:w-2/3 lg:w-1/3">
         <Link
           to="/"
@@ -22,6 +39,18 @@ const SignUp = () => {
         </h1>
 
         <form className="px-4 flex flex-col">
+          <label htmlFor="name" className="dark:text-white pl-1 pb-2">
+            Name:
+          </label>
+          <input
+            type="name"
+            id="name"
+            placeholder="Name"
+            className="px-2 py-3 mb-4 rounded border-2 border-gray-200 hover:border-gray-300 transition duration-200 dark:bg-gray-800 dark:border-gray-700 focus:outline-gray-400 dark:focus:outline-none"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+
           <label htmlFor="email" className="dark:text-white pl-1 pb-2">
             Email:
           </label>
@@ -29,7 +58,9 @@ const SignUp = () => {
             type="email"
             id="email"
             placeholder="Email"
-            className="px-2 py-3 mb-4 rounded border-2 text-white border-gray-200 hover:border-gray-300 transition duration-200 dark:bg-gray-800 dark:border-gray-700 focus:outline-gray-400 dark:focus:outline-none"
+            className="px-2 py-3 mb-4 rounded border-2 border-gray-200 hover:border-gray-300 transition duration-200 dark:bg-gray-800 dark:border-gray-700 focus:outline-gray-400 dark:focus:outline-none"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
 
           <label htmlFor="password" className="dark:text-white pl-1 pb-2">
@@ -39,13 +70,22 @@ const SignUp = () => {
             type="password"
             id="password"
             placeholder="Password"
-            className="px-2 py-3 mb-8 rounded border-2 text-white border-gray-200 hover:border-gray-300 transition duration-200 dark:bg-gray-800 dark:border-gray-700 focus:outline-gray-400 dark:focus:outline-none"
+            className="px-2 py-3 mb-8 rounded border-2 border-gray-200 hover:border-gray-300 transition duration-200 dark:bg-gray-800 dark:border-gray-700 focus:outline-gray-400 dark:focus:outline-none"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
 
-          <button className="p-3 rounded font-bold text-white bg-sky-500 mb-4 hover:bg-sky-600 transition duration-200">
+          <button
+            className="p-3 rounded font-bold text-white bg-sky-500 mb-4 enabled:hover:bg-sky-600 transition duration-200 disabled:cursor-not-allowed disabled:opacity-60"
+            ref={signUpButtonRef}
+            disabled={true}
+          >
             Sign up
           </button>
-          <button className="flex justify-center items-center gap-4 p-1 rounded font-bold text-gray-500 border-2 border-gray-300 hover:shadow-md transition duration-200 dark:bg-gray-50 dark:hover:bg-gray-100">
+          <button
+            className="flex justify-center items-center gap-4 p-1 rounded font-bold text-gray-500 border-2 border-gray-300 hover:shadow-md transition duration-200 dark:bg-gray-50 dark:hover:bg-gray-100"
+            ref={googleSignUpButtonRef}
+          >
             <img src={googleLogo} className="w-10" />
             Continue with Google
           </button>
