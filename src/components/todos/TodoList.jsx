@@ -1,10 +1,11 @@
 import { validate as uuidValidate } from 'uuid';
-import { Check, ArrowUUpLeft } from 'phosphor-react';
+import { Check, Trash, ArrowUUpLeft } from 'phosphor-react';
 import { arraySplit } from '../../utils/array-split';
 
 const TodoList = ({ todos, setTodos }) => {
   const handleTodoStatusChange = (e) => {
-    const todoId = e.currentTarget.parentElement.getAttribute('data-id');
+    const todoId =
+      e.currentTarget.parentElement.parentElement.getAttribute('data-id');
     if (!uuidValidate(todoId)) {
       return;
     }
@@ -16,6 +17,20 @@ const TodoList = ({ todos, setTodos }) => {
         }
 
         return todo;
+      })
+    );
+  };
+
+  const deleteTodo = (e) => {
+    const todoId =
+      e.currentTarget.parentElement.parentElement.getAttribute('data-id');
+    if (!uuidValidate(todoId)) {
+      return;
+    }
+
+    setTodos(
+      todos.filter((todo) => {
+        return todo.id !== todoId;
       })
     );
   };
@@ -32,11 +47,18 @@ const TodoList = ({ todos, setTodos }) => {
       className="mb-2 last:mb-0 flex justify-between items-center dark:bg-gray-800 p-3 rounded-full border-2 dark:border-gray-700"
     >
       <p>{todo.text}</p>
-      <Check
-        size={32}
-        className="p-1 cursor-pointer rounded-full dark:hover:bg-gray-600 hover:bg-gray-300  transition duration-200"
-        onClick={handleTodoStatusChange}
-      />
+      <div className="flex gap-2">
+        <Trash
+          size={32}
+          className="p-1 cursor-pointer rounded-full dark:hover:bg-gray-600 hover:bg-gray-300  transition duration-200"
+          onClick={deleteTodo}
+        />
+        <Check
+          size={32}
+          className="p-1 cursor-pointer rounded-full dark:hover:bg-gray-600 hover:bg-gray-300  transition duration-200"
+          onClick={handleTodoStatusChange}
+        />
+      </div>
     </div>
   ));
 
@@ -47,11 +69,18 @@ const TodoList = ({ todos, setTodos }) => {
       className="mb-2 last:mb-0 flex justify-between items-center dark:bg-gray-800/50 p-3 rounded-full border-2 dark:border-gray-700"
     >
       <p className="line-through opacity-50">{todo.text}</p>
-      <ArrowUUpLeft
-        size={32}
-        className="p-1 cursor-pointer rounded-full dark:hover:bg-gray-600 hover:bg-gray-300  transition duration-200"
-        onClick={handleTodoStatusChange}
-      />
+      <div className="flex gap-2">
+        <Trash
+          size={32}
+          className="p-1 cursor-pointer rounded-full dark:hover:bg-gray-600 hover:bg-gray-300  transition duration-200"
+          onClick={deleteTodo}
+        />
+        <ArrowUUpLeft
+          size={32}
+          className="p-1 cursor-pointer rounded-full dark:hover:bg-gray-600 hover:bg-gray-300  transition duration-200"
+          onClick={handleTodoStatusChange}
+        />
+      </div>
     </div>
   ));
 
