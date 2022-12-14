@@ -1,5 +1,3 @@
-import TextTruncate from 'react-text-truncate';
-
 const NotesList = ({ notes, setNotes }) => {
   const notesElements = notes.map((note) => (
     <div
@@ -7,13 +5,7 @@ const NotesList = ({ notes, setNotes }) => {
       data-id={note.id}
       className="mb-2 last:mb-0 p-3 dark:bg-gray-800 rounded-md border-2 dark:border-gray-700"
     >
-      <TextTruncate
-        line={3}
-        element="p"
-        truncateText="…"
-        text={note.text}
-        className="whitespace-pre-wrap"
-      />
+      <p>{note.text}</p>
     </div>
   ));
 
