@@ -1,6 +1,6 @@
 # gnocchi
 
-##Todo app with a modern design built using TailwindCSS
+## Todo app with a modern design built using TailwindCSS
 
 The app was built using React. Styled using TailwindCSS.
 
