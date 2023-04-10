@@ -6,7 +6,7 @@ The app was built using React and styled using TailwindCSS.
 
 To get started with the project, you can clone the github repo:
 
-    git clone https://github.com/karamissa/freshr
+    git clone https://github.com/karamissa/gnocchi
 
 Navigate to the project folder & install Node app dependencies:
 
