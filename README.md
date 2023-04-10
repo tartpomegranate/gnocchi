@@ -8,7 +8,7 @@ To get started with the project, you can clone the github repo:
 
     git clone https://github.com/karamissa/gnocchi
 
-Navigate to the project folder & install Node app dependencies:
+Navigate to the project folder & app dependencies:
 
     cd gnocchi
     npm install
