@@ -3,14 +3,16 @@ const NotesList = ({ notes, setNotes }) => {
     <div
       key={note.id}
       data-id={note.id}
-      className="mb-2 last:mb-0 p-3 dark:bg-gray-800 rounded-md border-2 dark:border-gray-700"
+      className="last:mb-0 p-3 dark:bg-gray-800 rounded-md border-2 dark:border-gray-700"
     >
-      <p>{note.text}</p>
+      <p>
+        {note.text.length > 200 ? `${note.text.slice(0, 200)}...` : note.text}
+      </p>
     </div>
   ));
 
   return (
-    <div className="pb-4 md:w-2/3 md:columns-2 xl:columns-3 md:gap-2">
+    <div className="pb-4 md:w-2/3 grid grid-cols-2 md:gap-2">
       {notes.length !== 0 && notesElements}
     </div>
   );
